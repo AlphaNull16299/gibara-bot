@@ -2,7 +2,6 @@ import os
 import traceback
 import discord
 import asyncio
-#1
 from discord.ext import commands, tasks
 from time import time
 
