@@ -1,1 +1,1 @@
-discordbot: python ull.py
+discordbot: python run.py
