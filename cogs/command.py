@@ -77,8 +77,9 @@ class command(commands.Cog):
    
         
     @commands.command()
+    @commands.is_owner()
     async def say(self, ctx, *, text):
-        await ctx.send(`text`)
+        await ctx.send(text)
         
     @commands.command(name="eval")
     @commands.is_owner()
