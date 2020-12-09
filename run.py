@@ -25,13 +25,13 @@ class MyBot(commands.Bot):
         
         
     async def on_ready(self):
-        print("起動に成功しました。正常に起動していれば::tが開始されています。")
+        print("起動に成功しました。正常に起動していれば正常に起動します(？)")
         print("------")
         self.wait_for_tao.start()
         ch = self.get_channel(c_id)
         if ch:
             await ch.send("::t <@548058577848238080>")
-        activity = discord.Game(name="a)help | Version2.1.0", type=3)
+        activity = discord.Game(name="a)help | Version2.1.1", type=3)
         for cog in ["command","tao"]:
             self.load_extension(f"cogs.{cog}")
         return await self.change_presence(status=discord.Status.do_not_disturb, activity=activity)
