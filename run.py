@@ -31,7 +31,7 @@ class MyBot(commands.Bot):
         ch = self.get_channel(c_id)
         if ch:
             await ch.send("::t <@548058577848238080>")
-        activity = discord.Game(name="a)help | Version2.1.1", type=3)
+        activity = discord.Game(name="a)help | Version2.1.2", type=3)
         for cog in ["command","tao"]:
             self.load_extension(f"cogs.{cog}")
         return await self.change_presence(status=discord.Status.do_not_disturb, activity=activity)
