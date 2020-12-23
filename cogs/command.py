@@ -45,8 +45,8 @@ class command(commands.Cog):
        
     @commands.command()
     async def update(self, ctx):
-        embed = discord.Embed(title="最新のアップデート情報",description="Version 2.1.1",color=0xff0000)
-        embed.add_field(name="詳細情報",value="2.1.0・Traningを停止させました。\n・GithubをForkから自家製に変更しました\n2.1.1・EvalのErrorのメッセージを変更。")
+        embed = discord.Embed(title="最新のアップデート情報",description="Version 2.1.2",color=0xff0000)
+        embed.add_field(name="詳細情報",value="パッケージをインストールして、gitの綺麗さを捨てました。")
         await ctx.send(embed=embed)
 
 
