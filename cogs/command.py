@@ -21,6 +21,10 @@ class command(commands.Cog):
         await ctx.send('OK')
 
     @commands.command()
+    async def 2021(self, ctx):
+    await ctx.send('┏━━┓┏━━┓┏━━┓ ┏┓ \n┗━┓┃┃┏┓┃┗━┓┃ ┃┃\n┏━┛┃┃┃┃┃┏━┛┃ ┃┃\n┃┏━┛┃┃┃┃┃┏━┛ ┃┃ \n┃┗━┓┃┗┛┃┃┗━┓ ┃┃ \n┗━━┛┗━━┛┗━━┛ ┗┛')
+
+    @commands.command()
     async def code(self, ctx):
         embed = discord.Embed(title="オープンソースなのでここでコードを見れます",description="本当は自分用と言うことは秘密",color=0xe67e22)
         embed.add_field(name="Github",value="https://github.com/AlphaNull16299/gibara-bot")
