@@ -21,8 +21,8 @@ class command(commands.Cog):
         await ctx.send('OK')
 
     @commands.command()
-    async def 2021(self, ctx):
-    await ctx.send('┏━━┓┏━━┓┏━━┓ ┏┓ \n┗━┓┃┃┏┓┃┗━┓┃ ┃┃\n┏━┛┃┃┃┃┃┏━┛┃ ┃┃\n┃┏━┛┃┃┃┃┃┏━┛ ┃┃ \n┃┗━┓┃┗┛┃┃┗━┓ ┃┃ \n┗━━┛┗━━┛┗━━┛ ┗┛')
+    async def new(self, ctx):
+        await ctx.send('┏━━┓┏━━┓┏━━┓ ┏┓ \n┗━┓┃┃┏┓┃┗━┓┃ ┃┃\n┏━┛┃┃┃┃┃┏━┛┃ ┃┃\n┃┏━┛┃┃┃┃┃┏━┛ ┃┃ \n┃┗━┓┃┗┛┃┃┗━┓ ┃┃ \n┗━━┛┗━━┛┗━━┛ ┗┛')
 
     @commands.command()
     async def code(self, ctx):
