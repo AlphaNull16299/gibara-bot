@@ -8,6 +8,7 @@ import re
 import aiohttp
 import json
 import discord
+import datetime
 
 from discord.ext import commands, tasks
 from discord import  Embed, utils, User, File, Attachment
@@ -19,6 +20,12 @@ class command(commands.Cog):
     @commands.command()
     async def test(self, ctx):
         await ctx.send('OK')
+        
+        
+    @bot.command()
+    async def now(self, bot):
+        now = datetime.datetime.now()
+        await ctx.send(now)
 
     @commands.command()
     async def new(self, ctx):
