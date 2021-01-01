@@ -23,7 +23,7 @@ class command(commands.Cog):
         
         
     @bot.command()
-    async def now(self, ):
+    async def now(self, ctx):
         now = datetime.datetime.now()
         await ctx.send(now)
 
