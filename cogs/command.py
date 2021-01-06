@@ -134,9 +134,9 @@ class command(commands.Cog):
                     await ctx.send(result)
         except:
             embed = Embed(color=0xFFFF00)
-            embed.add_field(name="！！！ＥＲＲＯＲ！！！", value="```py\n{}```".format(traceback.format_exc()[:1024:]), inline=False)
+            embed.add_field(name="エラってやんのwwwwwwにわかかお前？wwwwww", value="```py\n{}```".format(traceback.format_exc()[:1024:]), inline=False)
             await ctx.send(embed=embed)
-            await ctx.message.add_reaction("⚠️")
+            await ctx.message.add_reaction(":middle_finger:")
 
     @commands.command()
     @commands.is_owner()
