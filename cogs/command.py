@@ -18,17 +18,8 @@ class command(commands.Cog):
         self.bot = bot
 
         
-        
-@commands.event()
-async def on_command_error(ctx,exception):
-    if isinstance(exception,commands.CommandNotFound):
-        await ctx.send("そのコマンドは存在しない")
-    elif isinstance(exception,commands.MissingRequiredArgument):
-        await ctx.send("引数が足りてない")
-    else:
-        await ctx.send("例外発生 | {}".format(exception))
-        
-    @commands.event()
+             
+    @commands.events()
     async def on_command_error(ctx,exception):
         if isinstance(exception,commands.CommandNotFound):
             await ctx.send('そんなのない')
@@ -54,7 +45,7 @@ async def on_command_error(ctx,exception):
     @commands.command()
     async def code(self, ctx):
         embed = discord.Embed(title="オープンソースなのでここでコードを見れます",description="本当は自分用と言うことは秘密",color=0xe67e22)
-        embed.add_field(name="Github",value="https://github.com/AlphaNull16299/gibara-bot")
+p        embed.add_field(name="Github",value="https://github.com/AlphaNull16299/gibara-bot")
         embed.add_field(name="Heroku(自分用)",value="https://dashboard.heroku.com/apps/newgibarabot/logs")
         await ctx.send(embed=embed)
     
