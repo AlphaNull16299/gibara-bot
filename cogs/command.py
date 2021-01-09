@@ -63,7 +63,9 @@ class command(commands.Cog):
 
     @commands.command()
     async def ping(self, ctx):
-        await ctx.send('Pong! {0}ms'.format(round(self.bot.latency * 1000)))
+        ping = '平均速度：{0}ms'.format(round(bot.latency * 1000))
+        embed = discord.Embed(title='Nuro光が欲しいぃぃぃぃ', description=ping,color=0xFFFF00)
+        await ctx.send(embed=embed)
 
     @commands.command()
     @commands.is_owner()
@@ -92,7 +94,7 @@ class command(commands.Cog):
     async def say(self, ctx, *, text):
         await ctx.send(text)
         
-    @commands.command(name="eval")
+    @commands.command(name="ev")
     @commands.is_owner()
     async def eval_(self, ctx, *, cmd):
         def get_role(name):
