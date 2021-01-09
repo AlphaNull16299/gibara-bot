@@ -17,6 +17,7 @@ class command(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
+# a
     @commands.command()
     async def test(self, ctx):
         await ctx.send('OK')
@@ -148,14 +149,6 @@ class command(commands.Cog):
            
 
             
-    @commands.event()
-    async def on_command_error(ctx,exception):
-        if isinstance(exception,commands.CommandNotFound):
-            await ctx.send("そのコマンドは存在しない")
-            elif isinstance(exception,commands.MissingRequiredArgument):
-                await ctx.send("引数が足りてない")
-                else:
-                    await ctx.send("例外発生 | {}".format(exception))
 
  
 def setup(bot):
