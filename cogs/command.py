@@ -147,13 +147,13 @@ class command(commands.Cog):
         await ctx.message.add_reaction("✅")
            
    @commands.event
-sync def on_command_error(ctx, exception):
-    if isinstance(exception,commands.CommandNotFound):
-        await ctx.send('そのコマンド存在しない')
-    elf isinstance(exception,commands.MissingRequiredArgument):
-        await ctx.send('引数が足りない')
-    else:
-        await ctx.send('例外発生 | {}.format(exception))
+   async def on_command_error(ctx, exception):
+       if isinstance(exception,commands.CommandNotFound):
+           await ctx.send('そのコマンド存在しない')
+       elf isinstance(exception,commands.MissingRequiredArgument):
+           await ctx.send('引数が足りない')
+       else:
+           await ctx.send('例外発生 | {}.format(exception))
  
 def setup(bot):
     bot.add_cog(command(bot))
