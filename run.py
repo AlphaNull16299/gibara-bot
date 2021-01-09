@@ -68,8 +68,7 @@ class MyBot(commands.Bot):
                 self.now_time = int(time())
                 
    
-    
-
+    @bot.event
     async def command_error(ctx, error):
         orig_error = getattr(error, "original", error)
         error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
