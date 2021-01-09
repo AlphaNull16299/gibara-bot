@@ -67,9 +67,6 @@ class MyBot(commands.Bot):
                 await message.channel.send("::t")
                 self.now_time = int(time())
 
-    async def on_command_error(self, ctx, error):
-        await ctx.send("오류가 발생했습니다. 자신의 권한을 확인하고 그래도 해결되지 않으면 Alpha Null # 5000로 연락하십시오.")
-
 
     async def tao_atk(self):
         await self.wait_until_ready()
