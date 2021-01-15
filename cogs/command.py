@@ -64,7 +64,7 @@ class command(commands.Cog):
     @commands.command()
     async def ping(self, ctx):
         ping = '平均速度：{0}ms'.format(round(self.bot.latency * 1000))
-        embed = discord.Embed(title"Softbank Airより速い回線はこちらです",description=ping,color=0xffff00)
+        embed = discord.Embed(title="Softbank Airより速い回線はこちらです",description=ping,color=0xffff00)
         await ctx.send(embed=embed)
 
     @commands.command()
