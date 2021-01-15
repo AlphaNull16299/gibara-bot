@@ -57,11 +57,14 @@ class MyBot(commands.Bot):
                 await message.channel.send("::t")
                 self.now_time = int(time)
 
-    async def on_command_error(self, ctx, error):
-        orig_error = getattr(error, "original", error)
-        error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
-        return await ctx.send(error_msg)
-
+   
+    async def on_command_error(ctx,exception):
+        if isinstance(exception,commands.CommandNotFound):
+            await ctx.send("そのコマンドは存在しない")
+        elif isinstance(exception,commands.MissingRequiredArgument):
+            await ctx.send("引数が足りてない")
+        else:
+            await ctx.send("例外発生 | {}".format(exception))
 if __name__ == '__main__':
     main_task = loop.create_task(run())
     loop.run_until_complete(main_task)
