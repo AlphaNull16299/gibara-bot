@@ -2,7 +2,6 @@ import os
 import traceback
 import discord
 import asyncio
-
 from discord.ext import commands, tasks
 from time import time
 
@@ -18,16 +17,11 @@ async def run():
     except KeyboardInterrupt:
         await bot.logout()
 
-        
-
 class MyBot(commands.Bot):
     def __init__(self):
         super().__init__(command_prefix=commands.when_mentioned_or(prefix), loop=loop, case_insensitive=True, help_command=None)
         self.load_extension("cogs.command")
         self.now_time = int(time())
-        
-        
-        
         
     async def on_ready(self):
         print("起動に成功しました")
