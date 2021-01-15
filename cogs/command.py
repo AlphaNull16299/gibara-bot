@@ -16,17 +16,6 @@ from discord import  Embed, utils, User, File, Attachment
 class command(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-
-        
-             
-    @commands.events()
-    async def on_command_error(ctx,exception):
-        if isinstance(exception,commands.CommandNotFound):
-            await ctx.send('そんなのない')
-        elif isinstance(exception,commands.MissingRequiredArgument):
-            await ctx.send('いんすうう')
-        else:
-            await ctx.send('????|{}'.format(exception))
                            
     @commands.command()
     async def test(self, ctx):
