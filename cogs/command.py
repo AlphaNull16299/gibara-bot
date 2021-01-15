@@ -34,7 +34,7 @@ class command(commands.Cog):
     @commands.command()
     async def code(self, ctx):
         embed = discord.Embed(title="オープンソースなのでここでコードを見れます",description="本当は自分用と言うことは秘密",color=0xe67e22)
-p        embed.add_field(name="Github",value="https://github.com/AlphaNull16299/gibara-bot")
+        embed.add_field(name="Github",value="https://github.com/AlphaNull16299/gibara-bot")
         embed.add_field(name="Heroku(自分用)",value="https://dashboard.heroku.com/apps/newgibarabot/logs")
         await ctx.send(embed=embed)
     
