@@ -25,7 +25,10 @@ class MyBot(commands.Bot):
         super().__init__(command_prefix=commands.when_mentioned_or(prefix), loop=loop, case_insensitive=True, help_command=None)
         self.load_extension("cogs.command")
         self.now_time = int(time)
-
+        
+        
+        
+        
     async def on_ready(self):
         print("起動に成功しました")
         self.wait_for_tao.start()
