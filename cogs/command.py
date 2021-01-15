@@ -63,7 +63,7 @@ class command(commands.Cog):
 
     @commands.command()
     async def ping(self, ctx):
-        ping = '平均速度：{0}ms'.format(round(bot.latency * 1000))
+        ping = '平均速度：{0}ms'.format(round(bots.latency * 1000))
         embed = discord.Embed(title="Nuro光が欲しいいいいいい",description=ping,color=0xffff00)
         await ctx.send(embed=embed)
 
