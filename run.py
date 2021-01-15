@@ -18,6 +18,7 @@ async def run():
     except KeyboardInterrupt:
         await bot.logout()
 
+        
 
 class MyBot(commands.Bot):
     def __init__(self):
