@@ -7,7 +7,7 @@ from time import time
 
 prefix = "a)"
 token = os.environ['DISCORD_BOT_TOKEN']
-c_id = 717664672626507776
+c_id = 776328743458832384
 loop = asyncio.get_event_loop()
 
 async def run():
@@ -33,7 +33,7 @@ class MyBot(commands.Bot):
     @tasks.loop(seconds=1.0)
     async def wait_for_tao(self):
         if int(time) >= self.now_time + 10:
-            await self.get_channel(c_id).send("::t")
+            await self.get_channel(c_id).send("起動か再起動しました")
             self.now_time = int(time)
             
     async def on_message(self, message):
