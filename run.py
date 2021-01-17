@@ -9,6 +9,7 @@ prefix = "a)"
 token = os.environ['DISCORD_BOT_TOKEN']
 c_id = 776328743458832384
 loop = asyncio.get_event_loop()
+intents =　discord.Intents.all()
 
 async def run():
     bot = MyBot()
@@ -26,7 +27,7 @@ class MyBot(commands.Bot):
     async def on_ready(self):
         print("起動に成功しました")
         self.wait_for_tao.start()
-        await self.get_channel(c_id).send("::t")
+        await self.get_channel(c_id).send("起動か再起動しました")
         activity = discord.Game(name="a)help", type=3)
         return await self.change_presence(status=discord.Status.do_not_disturb, activity=activity)
 
