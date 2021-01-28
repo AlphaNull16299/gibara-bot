@@ -29,7 +29,7 @@ class MyBot(commands.Bot):
         print("起動に成功しました")
         self.wait_for_tao.start()
         await self.get_channel(c_id).send("起動か再起動しました")
-        activity = discord.Game(name="a)help|len(bot.guilds)guilds", type=3)
+        activity = discord.Game(name=f"a)help|len(bot.guilds)guilds", type=3)
         return await self.change_presence(status=discord.Status.do_not_disturb, activity=activity)
 
     @tasks.loop(seconds=1.0)
