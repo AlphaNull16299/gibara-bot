@@ -9,6 +9,7 @@ prefix = "a)"
 token = os.environ['DISCORD_BOT_TOKEN']
 c_id = 776328743458832384
 loop = asyncio.get_event_loop()
+Intents = Intents.all()
 
 
 async def run():
