@@ -54,8 +54,8 @@ class command(commands.Cog):
 
     @commands.command()
     async def update(self, ctx):
-        embed = discord.Embed(title="最新のアップデート情報",description="Version 2.1.3",color=0xff0000)
-        embed.add_field(name="詳細情報",value="nowコマンドを追加しました。ただし、UTCです。各自+5してください")
+        embed = discord.Embed(title="最新のアップデート情報",description="Version 2.2.0",color=0xff0000)
+        embed.add_field(name="詳細情報",value="・開発環境を大幅に改善しました。\n・pingコマンドをEmbed化しました。\n・Statusに導入guild数を追加しました。\n・数億年ぶりにここを変更しました。")
         await ctx.send(embed=embed)
 
 
