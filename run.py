@@ -60,7 +60,7 @@ class MyBot(commands.Bot):
                 self.now_time = int(time)
 
                 
-    aysnc def on_message(message):
+    async def on_message(message):
     if message.author.id != 804270128048111657:
         return
     if message.channel.id != 717664672626507776:
