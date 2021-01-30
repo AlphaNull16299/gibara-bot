@@ -9,18 +9,16 @@ import aiohttp
 import json
 import discord
 import datetime
-
 from discord.ext import commands, tasks
 from discord import  Embed, utils, User, File, Attachment
 
 class command(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-                           
+
     @commands.command()
     async def test(self, ctx):
         await ctx.send('OK')
-        
         
     @commands.command()
     async def now(self, ctx):
@@ -53,7 +51,7 @@ class command(commands.Cog):
         embed.add_field(name="ban*",value="指定したuserをbanできますか？")
         embed.add_field(name="注意事項！",value="*が付いてるやつはBotOwnerしか実行できません！")
         await ctx.send(embed=embed)
-       
+
     @commands.command()
     async def update(self, ctx):
         embed = discord.Embed(title="最新のアップデート情報",description="Version 2.1.3",color=0xff0000)
@@ -87,7 +85,6 @@ class command(commands.Cog):
         embed.add_field(name="実行", value=ctx.author.name, inline=False)
         await ctx.send(embed=embed)
 
-   
         
     @commands.command()
     @commands.is_owner()
@@ -145,10 +142,6 @@ class command(commands.Cog):
     async def dm(self, ctx, user: User, *, message):
         await user.send(message)
         await ctx.message.add_reaction("✅")
-           
 
-            
-
- 
 def setup(bot):
     bot.add_cog(command(bot))
