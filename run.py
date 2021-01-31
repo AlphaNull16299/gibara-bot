@@ -7,7 +7,7 @@ from time import time
 
 prefix = "a)"
 token = os.environ['DISCORD_BOT_TOKEN']
-c_id = 776328743458832384
+c_id = 0
 loop = asyncio.get_event_loop()
 
 async def run():
@@ -34,7 +34,7 @@ class MyBot(commands.Bot):
     async def wait_for_tao(self):
         if int(time) >= self.now_time + 10:
             await self.get_channel(c_id).send("起動か再起動しました")
-            self.now_time = int(time)
+            self.now_time = int(time())
             
     async def on_message(self, message):
         user_id = message.author.id
@@ -47,7 +47,7 @@ class MyBot(commands.Bot):
                 await message.channel.send("::login")
                 await asyncio.sleep(10)
                 await message.channel.send("::t")
-                self.now_time = int(time)
+                self.now_time = int(time())
 
             if user_id == 664790025040429057:
                 await asyncio.sleep(1)
@@ -55,7 +55,7 @@ class MyBot(commands.Bot):
                 await self.wait_for("message_edit", check=lambda b, a: a.channel.id == c_id and a.author.id == 695288604829941781)
                 await asyncio.sleep(3)
                 await message.channel.send("::t")
-                self.now_time = int(time)
+                self.now_time = int(time())
 
     async def on_command_error(ctx,exception):
         if isinstance(exception,commands.CommandNotFound):
