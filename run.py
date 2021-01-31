@@ -7,7 +7,7 @@ from time import time
 
 prefix = "a)"
 token = os.environ['DISCORD_BOT_TOKEN']
-c_id = 776328743458832384
+c_id = 728743458832384
 loop = asyncio.get_event_loop()
 
 
@@ -32,8 +32,33 @@ class MyBot(commands.Bot):
         activity = discord.Game(name=f"またがたちました | {prefix}help | {len(self.guilds)}guilds", type=1)
         return await self.change_presence(status=discord.Status.do_not_disturb, activity=activity)
 
-
+  
      async def on_message(self, message):
+          user_id = message.author.id
+          if message.content.startswith(prefix):
+              return await self.process_commands(message)
+
+          if message.channel.id == c_id:
+              if user_id == 695288604829941781 and message.embeds and f"{self.user.mention}さん...\nゲームにログインしてね！！\n[コマンドは::loginだよ！！]" == message.embeds[0].description:
+                  await asyncio.sleep(10)
+                  await message.channel.send("::login")
+                  await asyncio.sleep(10)
+                  await message.channel.send("::t")
+                  self.now_time = int(time)
+
+              if user_id == 664790025040429057:
+                  await asyncio.sleep(1)
+                  await message.channel.send(message.content)
+                  await self.wait_for("message_edit", check=lambda b, a: a.channel.id == c_id and a.author.id == 695288604829941781)
+                  await asyncio.sleep(3)
+                  await message.channel.send("::t")
+                  self.now_time = int(time)
+
+
+
+
+
+   async def on_message(self, message):
          user_id = message.author.id
          if message.content.startswith(prefix):
              return await self.process_commands(message)
