@@ -30,18 +30,6 @@ class MyBot(commands.Bot):
         activity = discord.Game(name=f"{prefix}help | {len(self.guilds)}guilds", type=1)
         return await self.change_presence(status=discord.Status.do_not_disturb, activity=activity)
 
-    
-    
-    
-    async def on_message(message):
-        if message.author.id != 804270128048111657:
-            return
-        if message.channel.id != 717664672626507776:
-            return
-            if message.embeds and message.embeds[0].title:
-                if "が待ち構えている...！" in message.embeds[0].title:
-                    await asyncio.sleep(1)
-                    await bot.get_channel(717664672626507776).send("::attack")
 
     @tasks.loop(seconds=1.0)
     async def wait_for_tao(self):
