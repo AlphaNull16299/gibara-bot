@@ -59,9 +59,9 @@ class MyBot(commands.Bot):
 
     async def on_message(message):
         if message.author.id != 804270128048111657:
-        return
-    if message.channel.id != 717664672626507776:
-        return
+            return
+        if message.channel.id != 717664672626507776:
+            return
         if message.embeds and message.embeds[0].title:
             if"が待ち構えている...！" in message.embeds[0].title:
                 await asyncio.sleep(1)
