@@ -59,7 +59,6 @@ class MyBot(commands.Bot):
                 self.now_time = int(time())
 
                 
-
 async def on_message(message):
     if message.channel.id != 717664672626507776:
         return
@@ -70,13 +69,6 @@ async def on_message(message):
         await asyncio.sleep(1)
         await bot.get_channel(717664672626507776).send("::attack")
         
-    async def on_command_error(ctx,exception):
-        if isinstance(exception,commands.CommandNotFound):
-            await ctx.send("そのコマンドは存在しない")
-        elif isinstance(exception,commands.MissingRequiredArgument):
-            await ctx.send("引数が足りてない")
-        else:
-            await ctx.send("例外発生 | {}".format(exception))
 if __name__ == '__main__':
     main_task = loop.create_task(run())
     loop.run_until_complete(main_task)
