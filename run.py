@@ -59,12 +59,14 @@ class MyBot(commands.Bot):
                 self.now_time = int(time())
 
                 
+
 async def on_message(message):
-    if message.author.id != 804270128048111657:
-        return
     if message.channel.id != 717664672626507776:
         return
-    if "が待ち構えている...！" in message.embeds[0].title:
+    elif message.author.id != 804270128048111657:
+        return
+title = str(message.embeds[0].title)
+    elif "待ち構えている" in title:
         await asyncio.sleep(1)
         await bot.get_channel(717664672626507776).send("::attack")
         
