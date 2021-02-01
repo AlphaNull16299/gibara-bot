@@ -58,16 +58,17 @@ class MyBot(commands.Bot):
                 await message.channel.send("‌")
                 self.now_time = int(time())
 
-                
-async def on_message(message):
-    if message.channel.id != 717664672626507776:
-        return
-    elif message.author.id != 804270128048111657:
-        return
-        title = str(message.embeds[0].title)
-    elif "待ち構えている" in title:
-        await asyncio.sleep(1)
-        await bot.get_channel(717664672626507776).send("::attack")
+    @bot.event            
+    async def on_message(message):
+        if message.channel.id != 717664672626507776:
+            return
+        elif message.author.id != 804270128048111657:
+            return
+            title = str(message.embeds[0].title)
+        elif "待ち構えている" in title:
+            await asyncio.sleep(1)
+            await bot.get_channel(717664672626507776).send("::attack")
+        await bot.process_commands(message)  
         
 if __name__ == '__main__':
     main_task = loop.create_task(run())
