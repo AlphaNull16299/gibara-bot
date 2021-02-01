@@ -30,13 +30,6 @@ class MyBot(commands.Bot):
         activity = discord.Game(name=f"{prefix}help | {len(self.guilds)}guilds", type=3)
         return await self.change_presence(status=discord.Status.do_not_disturb, activity=activity)
 
-
-    @tasks.loop(seconds=1.0)
-    async def wait_for_tao(self):
-        if int(time()) >= self.now_time + 10:
-            await self.get_channel(c_id).send("‌")
-            self.now_time = int(time())
-   
     async def on_message(message):
         if message.channel.id != 717664672626507776:
             return
@@ -47,6 +40,12 @@ class MyBot(commands.Bot):
             await asyncio.sleep(1)
             await bot.get_channel(717664672626507776).send("::attack")
         await bot.process_commands(message)  
+    
+    @tasks.loop(seconds=1.0)
+    async def wait_for_tao(self):
+        if int(time()) >= self.now_time + 10:
+            await self.get_channel(c_id).send("‌")
+            self.now_time = int(time())
         
 if __name__ == '__main__':
     main_task = loop.create_task(run())
