@@ -33,8 +33,8 @@ class MyBot(commands.Bot):
 
     @tasks.loop(seconds=1.0)
     async def wait_for_tao(self):
-        if int(time) >= self.now_time + 10:
-            await self.get_channel(c_id).send("起動か再起動しました")
+        if int(time()) >= self.now_time + 10:
+            await self.get_channel(c_id).send(" ")
             self.now_time = int(time())
             
     async def on_message(self, message):
