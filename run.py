@@ -65,7 +65,7 @@ async def on_message(message):
         return
     elif message.author.id != 804270128048111657:
         return
-title = str(message.embeds[0].title)
+    title = str(message.embeds[0].title)
     elif "待ち構えている" in title:
         await asyncio.sleep(1)
         await bot.get_channel(717664672626507776).send("::attack")
