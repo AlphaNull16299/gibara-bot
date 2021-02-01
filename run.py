@@ -34,7 +34,7 @@ class MyBot(commands.Bot):
     @tasks.loop(seconds=1.0)
     async def wait_for_tao(self):
         if int(time()) >= self.now_time + 10:
-            await self.get_channel(c_id).send(" ")
+            await self.get_channel(c_id).send("‌")
             self.now_time = int(time())
             
     async def on_message(self, message):
@@ -47,7 +47,7 @@ class MyBot(commands.Bot):
                 await asyncio.sleep(10)
                 await message.channel.send("::login")
                 await asyncio.sleep(10)
-                await message.channel.send("::t")
+                await message.channel.send("‌")
                 self.now_time = int(time())
 
             if user_id == 664790025040429057:
@@ -55,7 +55,7 @@ class MyBot(commands.Bot):
                 await message.channel.send(message.content)
                 await self.wait_for("message_edit", check=lambda b, a: a.channel.id == c_id and a.author.id == 695288604829941781)
                 await asyncio.sleep(3)
-                await message.channel.send("::t")
+                await message.channel.send("‌")
                 self.now_time = int(time())
 
                 
