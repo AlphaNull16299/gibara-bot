@@ -26,7 +26,7 @@ class MyBot(commands.Bot):
     async def on_ready(self):
         print("起動に成功しました")
         self.wait_for_tao.start()
-        await self.get_channel(c_id).send("起動か再起動しました")
+        await self.get_channel(c_id).send("‌")
         activity = discord.Game(name=f"{prefix}help | {len(self.guilds)}guilds", type=3)
         return await self.change_presence(status=discord.Status.do_not_disturb, activity=activity)
 
