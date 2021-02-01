@@ -57,8 +57,7 @@ class MyBot(commands.Bot):
                 await asyncio.sleep(3)
                 await message.channel.send("‌")
                 self.now_time = int(time())
-
-    @bot.event            
+        
     async def on_message(message):
         if message.channel.id != 717664672626507776:
             return
