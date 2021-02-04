@@ -58,12 +58,6 @@ class MyBot(commands.Bot):
                 await message.channel.send("a")
                 self.now_time = int(time())
                 
-    async def on_message(message):
-        if message.author.id == 804270128048111657 and message.channel.id == 717664672626507776:
-            title = str(message.embeds[0].title)
-            if "待ち構えている" in title:
-            await asyncio.sleep(1)
-            await bot.get_channel(717664672626507776).send("::attack")
 
     async def on_command_error(ctx,exception):
         if isinstance(exception,commands.CommandNotFound):
