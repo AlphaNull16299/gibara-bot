@@ -31,7 +31,7 @@ class MyBot(commands.Bot):
         return await self.change_presence(status=discord.Status.do_not_disturb, activity=activity)
 
 
-    @commands.Cog.listener()
+    
     async def on_message(self, message):
         if message.author.id != 804270128048111657:
             return
