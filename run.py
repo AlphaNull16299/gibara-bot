@@ -5,7 +5,7 @@ import asyncio
 from discord.ext import commands, tasks
 from time import time
 
-prefix = "a)"
+prefix = "p)"
 token = os.environ['DISCORD_BOT_TOKEN']
 c_id = 805349530023231498
 loop = asyncio.get_event_loop()
